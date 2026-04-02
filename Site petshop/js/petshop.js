@@ -78,3 +78,7 @@ function cadastrarPet() {
     // REDIRECIONAR PARA A PÁGINA DO COMPROVANTE
     window.location.href = "comprovante.html";
 }
+
+function removerNumeros(input) {
+    input.value = input.value.replace(/\d/g, '');
+}
