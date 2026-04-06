@@ -10,7 +10,9 @@
 
 </head>
 <body>
-
+    
+    <img src="img/logo.png" alt="Logo">
+    
     <h2>CADASTRO DE ANIMAIS</h2>
 
     <ul class="menu">
@@ -23,7 +25,7 @@
         <form id="formCadastro" onsubmit="cadastrarPet(); return false;">
             
             <label><strong>Nome do Animal:</strong></label><br>
-            <input type="text" id="nome" style="width: 98%; padding: 10px;" required><br><br>
+            <input type="text" id="nome" oninput="removerNumeros(this)" required><br><br>
 
             <label><strong>Espécie:</strong></label><br>
             <select id="especie">

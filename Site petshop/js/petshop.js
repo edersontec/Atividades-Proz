@@ -79,6 +79,8 @@ function cadastrarPet() {
     window.location.href = "comprovante.html";
 }
 
+function removerNumeros(input) {
+    input.value = input.value.replace(/\d/g, '');
 function cadastrarPet() {
 
     let nome = document.getElementById("nome").value;
