@@ -118,6 +118,12 @@ function cadastrar() {
     // limpa campos
     document.getElementById("usuario").value = "";
     document.getElementById("senha").value = "";
+
+    if (document.getElementById("msg").innerText === "Cadastro realizado com sucesso!") {
+        setTimeout(() => {
+            window.location.href = "conteudo.html";
+        }, 1500);
+    }
 }
 
 </script>

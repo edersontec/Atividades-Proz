@@ -24,8 +24,8 @@
     <fieldset>
         <legend><strong>DADOS DO PET</strong></legend>
 
-        <form onsubmit="cadastrarPet(); return false;">
-
+        <form id="formCadastro" onsubmit="cadastrarPet(); return false;">
+            
             <label><strong>Nome do Animal:</strong></label><br>
             <input type="text" id="nome" oninput="removerNumeros(this)" required><br><br>
 
@@ -43,9 +43,10 @@
             </select><br><br>
 
             <label><strong>Sexo:</strong></label><br>
-            <input type="radio" name="sexo" value="Macho"> Macho
-            <input type="radio" name="sexo" value="Fêmea"> Fêmea<br><br>
-
+            <input type="radio" name="sexo" value="Macho" required> Macho
+            <input type="radio" name="sexo" value="Fêmea" required> Fêmea<br><br>
+            
+           
             <label><strong>Serviços:</strong></label><br>
             <input type="checkbox" class="serv" value="Banho"> Banho
             <input type="checkbox" class="serv" value="Tosa"> Tosa
@@ -53,11 +54,13 @@
             <input type="checkbox" class="serv" value="Vacinacao"> Vacinação
             <input type="checkbox" class="serv" value="Hospedagem"> Hospedagem<br><br>
             
+            
             <label><strong>Data:</strong></label><br>
-            <input type="date" id="data"><br><br>
+            <input type="date" id="data" required><br><br>
 
             <input type="submit" value="CADASTRAR PET" style="padding: 10px 20px; cursor: pointer;">
         </form>
+        
     </fieldset>
 
     <div id="resultado" style="margin-top: 20px; min-height: 50px;"></div>
@@ -69,6 +72,7 @@
                 <span>“O cuidado que seu melhor amigo merece."</span>
             </div>
         </footer>
+
 
 </body>
 </html>
