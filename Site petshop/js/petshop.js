@@ -78,3 +78,39 @@ function cadastrarPet() {
     // REDIRECIONAR PARA A PÁGINA DO COMPROVANTE
     window.location.href = "comprovante.html";
 }
+
+function cadastrarPet() {
+
+    let nome = document.getElementById("nome").value;
+    let especie = document.getElementById("especie").value;
+    let data = document.getElementById("data").value;
+
+    let sexoSelecionado = document.querySelector('input[name="sexo"]:checked');
+    let sexo = sexoSelecionado ? sexoSelecionado.value : "Não informado";
+
+    let servicosMarcados = document.querySelectorAll('.serv:checked');
+    let lista = [];
+
+    servicosMarcados.forEach(servico => {
+        lista.push(servico.value);
+    });
+
+    // VALIDAÇÃO
+    if (lista.length === 0) {
+        alert("Selecione pelo menos um serviço!");
+        return;
+    }
+
+    // JUNTA OS SERVIÇOS
+    let listaServicos = lista.join(", ");
+
+    // SALVA NO LOCALSTORAGE
+    localStorage.setItem("nomePet", nome);
+    localStorage.setItem("especiePet", especie);
+    localStorage.setItem("sexoPet", sexo);
+    localStorage.setItem("listaServicos", listaServicos);
+    localStorage.setItem("dataPet", data);
+
+    //  REDIRECIONA
+    window.location.href = "comprovante.html";
+}
